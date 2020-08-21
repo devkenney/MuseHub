@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const methodOverride = require('method-override');
 const app = express();
@@ -27,7 +28,22 @@ db.on('open', () => {
   console.log('connection made!');
 })
 
+//Static Routes
+//======================================
+app.get('/', (req, res) => {
+  res.render('New');  
+})
 
+app.get('/about', (req, res) => {
+  
+})
+//======================================
+
+//Controllers
+//======================================
+const sheetsController = require('./controllers/sheets.js');
+app.use('/sheets', sheetsController);
+//======================================
 
 app.listen(PORT, () => {
   console.log('Listening on port ' + PORT);
