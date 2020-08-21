@@ -7,7 +7,8 @@ const sheetSchema = new mongoose.Schema ({
   description: {type: String, required: false},
   genre1: {type: String, required: true},
   genre2: {type: String, required: false},
-  youtube: {type: String, required: false}
+  youtube: {type: String, required: false},
+  type: {type: String, required: true}
 });
 
 const Sheet = mongoose.model('Sheet', sheetSchema);
