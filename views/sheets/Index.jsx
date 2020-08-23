@@ -3,7 +3,7 @@ const Default = require('../components/Default.jsx')
 
 class Index extends React.Component {
   render() {
-    const page = this.props.page;
+    const page = parseInt(this.props.page);
     const sheets = this.props.sheets;
     const numPages = this.props.numPages;
     return (
@@ -19,7 +19,8 @@ class Index extends React.Component {
                       <h4 className="mt-0">{element.title}</h4>
                       <h5 className="mt-0"><small className="text-muted">{element.composer}</small></h5>
                       {element.description}
-                      <hr />
+                      <br />
+                      <a href={`/sheets/${element._id}`} className="btn btn-secondary">View More</a>
                     </div>
                   </li>
                 )
@@ -37,7 +38,7 @@ class Index extends React.Component {
               </li>
               <li class="page-item"><a class="page-link bg-dark text-white" href={page === 1 ? `#` : `/sheets?page=${page - 1}`}>{page === 1 ? `1` : `${page - 1}`}</a></li>
               <li class="page-item"><a class="page-link bg-dark text-white" href={numPages < 2 ? `#` : page === 1 ? `/sheets?page=2` : `#`}>{page !== 1 ? `${page}` : `${page + 1}`}</a></li>
-              <li class="page-item"><a class="page-link bg-dark text-white" href={numPages < 3 ? `#` : page === 1 ? `/sheets?page=3` : `/sjeets?page=${page + 1}`}>{page === 1 ? `${page + 2}` : `${page + 1}`}</a></li>
+              <li class="page-item"><a class="page-link bg-dark text-white" href={numPages < 3 ? `#` : page === 1 ? `/sheets?page=3` : `/sheets?page=${page + 1}`}>{page === 1 ? `${page + 2}` : `${page + 1}`}</a></li>
               <li class="page-item">
                 <a class="page-link bg-dark text-white" href={page < numPages ? `/sheets?page=${page + 1}` : `#`} aria-label="Next">
                   <span aria-hidden="true">&raquo;</span>

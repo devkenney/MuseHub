@@ -46,6 +46,12 @@ router.post('/', (req, res) => {
 
 
 // Show
-
+router.get('/:id', (req, res) => {
+  Sheet.find({_id: req.params.id}, (error, foundSheet) => {
+    res.render('sheets/Show', {
+      sheet: foundSheet
+    });
+  });
+});
 
 module.exports = router;
