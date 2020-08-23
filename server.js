@@ -31,7 +31,11 @@ db.on('open', () => {
 //Static Routes
 //======================================
 app.get('/', (req, res) => {
-  res.render('New');  
+  res.redirect('/home');  
+})
+
+app.get('/home', (req, res) => {
+  res.render('Home');
 })
 
 app.get('/about', (req, res) => {

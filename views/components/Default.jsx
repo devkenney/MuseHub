@@ -30,8 +30,8 @@ class Default extends React.Component {
             defer
           ></script>
         </head>
-        <body>
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <body className="bg-secondary">
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <a className="navbar-brand" href="#">MuseHub</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -39,21 +39,18 @@ class Default extends React.Component {
 
             <div className="collapse navbar-collapse" id="navbarsExampleDefault">
               <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                  <a className="nav-link" href="/home">Home<span classNameName="sr-only">(current)</span></a>
+                <li className="nav-item">
+                  <a className="nav-link" href="/home">Home</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Link</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  <a className="nav-link" href="/about">About</a>
                 </li>
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <a className="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
                   <div className="dropdown-menu" aria-labelledby="dropdown01">
-                    <a className="dropdown-item" href="#">Action</a>
-                    <a className="dropdown-item" href="#">Another action</a>
-                    <a className="dropdown-item" href="#">Something else here</a>
+                    <a className="dropdown-item" href="/sheets">Sheets</a>
+                    <a className="dropdown-item" href="#">Composers</a>
+                    <a className="dropdown-item" href="#">Genres</a>
                   </div>
                 </li>
               </ul>

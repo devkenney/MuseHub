@@ -1,0 +1,54 @@
+const React = require('react');
+const Default = require('../components/Default.jsx')
+
+class Index extends React.Component {
+  render() {
+    const page = this.props.page;
+    const sheets = this.props.sheets;
+    const numPages = this.props.numPages;
+    return (
+      <Default>
+        <div className="container mt-3">
+          <ul className="list-unstyled">
+            {
+              sheets.map((element) => {
+                return (
+                  <li className="media bg-dark text-white p-2">
+                    <img src={element.image} className="mr-3 align-self-center ml-1" alt={element.title} style={{ width: 200 }} />
+                    <div className="media-body">
+                      <h4 className="mt-0">{element.title}</h4>
+                      <h5 className="mt-0"><small className="text-muted">{element.composer}</small></h5>
+                      {element.description}
+                      <hr />
+                    </div>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
+        <div className="container d-flex justify-content-center">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link bg-dark text-white" href={page > 1 ? `/sheets?page=${page - 1}` : `#`} aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link bg-dark text-white" href={page === 1 ? `#` : `/sheets?page=${page - 1}`}>{page === 1 ? `1` : `${page - 1}`}</a></li>
+              <li class="page-item"><a class="page-link bg-dark text-white" href={numPages < 2 ? `#` : page === 1 ? `/sheets?page=2` : `#`}>{page !== 1 ? `${page}` : `${page + 1}`}</a></li>
+              <li class="page-item"><a class="page-link bg-dark text-white" href={numPages < 3 ? `#` : page === 1 ? `/sheets?page=3` : `/sjeets?page=${page + 1}`}>{page === 1 ? `${page + 2}` : `${page + 1}`}</a></li>
+              <li class="page-item">
+                <a class="page-link bg-dark text-white" href={page < numPages ? `/sheets?page=${page + 1}` : `#`} aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </Default>
+    )
+  }
+}
+
+module.exports = Index;
