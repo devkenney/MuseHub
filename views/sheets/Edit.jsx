@@ -12,7 +12,7 @@ class Edit extends React.Component {
         <div className="container">
           <div className="jumbotron">
             <h2>Edit Sheet</h2>
-            <form action="/sheets" method="POST">
+            <form action={`/sheets/${sheet._id}/?_method=PUT`} method="POST">
               <div className="form-row">
                 <div className="form-group col">
                   <label htmlFor="title">Title</label>
@@ -117,6 +117,9 @@ class Edit extends React.Component {
                 <input className="form-control btn btn-primary" id="submit" type="submit" name="" value="Make Changes" />
               </div>
               </div>
+            </form>
+            <form action={`/sheets/${sheet.id}/?_method=DELETE`} method="POST">
+              <input className="form-control btn btn-primary" id="delete" type="submit" name="" value="Delete" />
             </form>
           </div>
         </div>

@@ -26,10 +26,18 @@ router.get('/new', (req, res) => {
 });
 
 // Destroy
-
+router.delete('/:id', (req, res) => {
+  Sheet.findByIdAndDelete(req.params.id, (error) => {
+    res.redirect(`/sheets`);
+  });
+});
 
 // Update
-
+router.put('/:id', (req, res) => {
+  Sheet.findByIdAndUpdate(req.params.id, req.body, (error) => {
+    res.redirect(`/sheets/${req.params.id}`);
+  });
+});
 
 // Create
 router.post('/', (req, res) => {
