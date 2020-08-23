@@ -3,7 +3,7 @@ const Default = require('../components/Default.jsx');
 
 class Show extends React.Component {
   render() {
-    const sheet = this.props.sheet[0];
+    const sheet = this.props.sheet;
     const youtube = (sheet.youtube.split('=').pop())
     console.log(youtube);
     return (
@@ -13,7 +13,9 @@ class Show extends React.Component {
             <div className="media mb-4">
               <img className="align-self-start mr-3" style={{ width: 300 }} src={sheet.image} />
               <div className="media-body">
-                <h2 className="display-4">{sheet.title}<a href={`/sheets/${sheet._id}/edit`} className="badge badge-secondary">Edit</a></h2>
+                <div className="d-flex">
+                  <h2 className="display-4">{sheet.title} <h4><a href={`/sheets/${sheet._id}/edit`} className="badge badge-pill badge-secondary">Edit</a></h4></h2>
+                </div>
                 <h3 className="display-5"><small className="text-muted">{sheet.composer}</small></h3>
                 <p>{sheet.description}</p>
               </div>
@@ -37,7 +39,7 @@ class Show extends React.Component {
             </div>
             <div className="embed-responsive embed-responsive-16by9">
               {
-              youtube === "" ? '' : <iframe className="embed-responsive-item" src={`https://youtube.com/embed/${youtube}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+                youtube === "" ? '' : <iframe className="embed-responsive-item" src={`https://youtube.com/embed/${youtube}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
               }
             </div>
           </div>
