@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Sheet = require('../models/sheet.js')
+const Genre = require('../models/genre.js')
 
 // Index
 router.get('/', (req, res) => {
@@ -22,7 +23,11 @@ router.get('/', (req, res) => {
 
 // New
 router.get('/new', (req, res) => {
-  res.render('sheets/New');
+  Genre.find({}, (error, allGenres) => {
+    res.render('sheets/New', {
+      genres: allGenres
+    });
+  });
 });
 
 // Destroy
@@ -57,11 +62,14 @@ router.post('/', (req, res) => {
 // Edit
 router.get('/:id/edit', (req, res) => {
   Sheet.findById(req.params.id, (error, foundSheet) => {
-    res.render('sheets/Edit', {
-      sheet: foundSheet
-    })
-  })
-})
+    Genre.find({}, (error, allGenres) => {
+      res.render('sheets/Edit', {
+        sheet: foundSheet,
+        genres: allGenres
+      });
+    });
+  });
+});
 
 // Show
 router.get('/:id', (req, res) => {

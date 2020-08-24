@@ -3,6 +3,7 @@ const Default = require('../components/Default.jsx');
 
 class New extends React.Component {
   render() {
+    const genres = this.props.genres;
     return (
       <Default>
         <div className="container">
@@ -57,37 +58,23 @@ class New extends React.Component {
                   <label>Genre(s)</label>
                   <div className="form-row">
                     <select className="form-control col" name="genre1">
-                      <option>Classical</option>
-                      <option>Pop</option>
-                      <option>Musical Theatre</option>
-                      <option>Jazz</option>
-                      <option>New Age</option>
-                      <option>Spiritual</option>
-                      <option>Big Band</option>
-                      <option>Folk</option>
-                      <option>Rock</option>
-                      <option>Country</option>
-                      <option>Blues</option>
-                      <option>Reggae</option>
-                      <option>Bluegrass</option>
-                      <option>Soundtrack</option>
+                      {
+                        genres.map((element) => {
+                          return (
+                            <option>{element.genreName}</option>
+                          )
+                        })
+                      }
                     </select>
                     <select className="form-control col" name="genre2">
                       <option></option>
-                      <option>Classical</option>
-                      <option>Pop</option>
-                      <option>Musical Theatre</option>
-                      <option>Jazz</option>
-                      <option>New Age</option>
-                      <option>Spiritual</option>
-                      <option>Big Band</option>
-                      <option>Folk</option>
-                      <option>Rock</option>
-                      <option>Country</option>
-                      <option>Blues</option>
-                      <option>Reggae</option>
-                      <option>Bluegrass</option>
-                      <option>Soundtrack</option>
+                      {
+                        genres.map((element) => {
+                          return (
+                            <option>{element.genreName}</option>
+                          )
+                        })
+                      }
                     </select>
                   </div>
                 </div>

@@ -6,7 +6,7 @@ class Edit extends React.Component {
     const sheet = this.props.sheet;
     let keyArray = sheet.key.split(" ");
     keyArray[0].split("");
-    console.log(keyArray);
+    const genres = this.props.genres;
     return (
       <Default>
         <div className="container">
@@ -61,37 +61,23 @@ class Edit extends React.Component {
                   <label>Genre(s)</label>
                   <div className="form-row">
                     <select className="form-control col" name="genre1">
-                      <option selected={sheet.genre1 === 'Classical' ? true : false}>Classical</option>
-                      <option selected={sheet.genre1 === 'Pop' ? true : false}>Pop</option>
-                      <option selected={sheet.genre1 === 'Musical Theatre' ? true : false}>Musical Theatre</option>
-                      <option selected={sheet.genre1 === 'Jazz' ? true : false}>Jazz</option>
-                      <option selected={sheet.genre1 === 'New Age' ? true : false}>New Age</option>
-                      <option selected={sheet.genre1 === 'Spiritual' ? true : false}>Spiritual</option>
-                      <option selected={sheet.genre1 === 'Big Band' ? true : false}>Big Band</option>
-                      <option selected={sheet.genre1 === 'Folk' ? true : false}>Folk</option>
-                      <option selected={sheet.genre1 === 'Rock' ? true : false}>Rock</option>
-                      <option selected={sheet.genre1 === 'Country' ? true : false}>Country</option>
-                      <option selected={sheet.genre1 === 'Blues' ? true : false}>Blues</option>
-                      <option selected={sheet.genre1 === 'Reggae' ? true : false}>Reggae</option>
-                      <option selected={sheet.genre1 === 'Bluegrass' ? true : false}>Bluegrass</option>
-                      <option selected={sheet.genre1 === 'Soundtrack' ? true : false}>Soundtrack</option>
+                    {
+                        genres.map((element) => {
+                          return (
+                            <option selected={sheet.genre2 === element.genreName ? true : false}>{element.genreName}</option>
+                          )
+                        })
+                      }
                     </select>
                     <select className="form-control col" name="genre2">
                       <option selected={sheet.genre2 === '' ? true : false}></option>
-                      <option selected={sheet.genre2 === 'Classical' ? true : false}>Classical</option>
-                      <option selected={sheet.genre2 === 'Pop' ? true : false}>Pop</option>
-                      <option selected={sheet.genre2 === 'Musical Theatre' ? true : false}>Musical Theatre</option>
-                      <option selected={sheet.genre2 === 'Jazz' ? true : false}>Jazz</option>
-                      <option selected={sheet.genre2 === 'New Age' ? true : false}>New Age</option>
-                      <option selected={sheet.genre2 === 'Spiritual' ? true : false}>Spiritual</option>
-                      <option selected={sheet.genre2 === 'Big Band' ? true : false}>Big Band</option>
-                      <option selected={sheet.genre2 === 'Folk' ? true : false}>Folk</option>
-                      <option selected={sheet.genre2 === 'Rock' ? true : false}>Rock</option>
-                      <option selected={sheet.genre2 === 'Country' ? true : false}>Country</option>
-                      <option selected={sheet.genre2 === 'Blues' ? true : false}>Blues</option>
-                      <option selected={sheet.genre2 === 'Reggae' ? true : false}>Reggae</option>
-                      <option selected={sheet.genre2 === 'Bluegrass' ? true : false}>Bluegrass</option>
-                      <option selected={sheet.genre2 === 'Soundtrack' ? true : false}>Soundtrack</option>
+                      {
+                        genres.map((element) => {
+                          return (
+                            <option selected={sheet.genre2 === element.genreName ? true : false}>{element.genreName}</option>
+                          )
+                        })
+                      }
                     </select>
                   </div>
                 </div>
