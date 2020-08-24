@@ -49,8 +49,8 @@ class Default extends React.Component {
                   <a className="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
                   <div className="dropdown-menu" aria-labelledby="dropdown01">
                     <a className="dropdown-item" href="/sheets">Sheets</a>
-                    <a className="dropdown-item" href="#">Composers</a>
-                    <a className="dropdown-item" href="#">Genres</a>
+                    <a className="dropdown-item" href="/composers">Composers</a>
+                    <a className="dropdown-item" href="/genres">Genres</a>
                   </div>
                 </li>
               </ul>

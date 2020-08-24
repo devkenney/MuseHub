@@ -17,7 +17,7 @@ class Show extends React.Component {
                   <h2 className="display-4">{sheet.title} <h4><a href={`/sheets/${sheet._id}/edit`} className="badge badge-pill badge-secondary">Edit</a></h4></h2>
                 </div>
                 <h3 className="display-5"><small className="text-muted">{sheet.composer}</small></h3>
-                <p>{sheet.description}</p>
+                <p style={{whiteSpace: "pre-line"}}>{sheet.description}</p>
               </div>
             </div>
             <div className="row">

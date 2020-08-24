@@ -18,7 +18,7 @@ class Index extends React.Component {
                     <div className="media-body">
                       <h4 className="mt-0">{element.title}</h4>
                       <h5 className="mt-0"><small className="text-muted">{element.composer}</small></h5>
-                      {element.description}
+                      <p style={{overflow: "hidden", maxHeight:50}}>{element.description}</p>
                       <br />
                       <a href={`/sheets/${element._id}`} className="btn btn-secondary">View More</a>
                     </div>
