@@ -26,6 +26,7 @@ class Index extends React.Component {
                 )
               })
             }
+            <li className="bg-dark text-white p-2 text-center"><a href="/sheets/new" className="btn btn-primary">New Sheet</a></li>
           </ul>
         </div>
         <div className="container d-flex justify-content-center">

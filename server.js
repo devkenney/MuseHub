@@ -47,6 +47,12 @@ app.get('/about', (req, res) => {
 //======================================
 const sheetsController = require('./controllers/sheets.js');
 app.use('/sheets', sheetsController);
+
+const composersController = require('./controllers/composers.js');
+app.use('/composers', composersController);
+
+const genresController = require('./controllers/genres.js');
+app.use('/genres', genresController);
 //======================================
 
 app.listen(PORT, () => {
