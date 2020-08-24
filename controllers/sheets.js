@@ -34,6 +34,10 @@ router.delete('/:id', (req, res) => {
 
 // Update
 router.put('/:id', (req, res) => {
+  const key = `${req.body.key}${req.body.keyMod} ${req.body.majMin}`
+  req.body.key = key;
+  delete req.body.keyMod;
+  delete req.body.majMin;
   Sheet.findByIdAndUpdate(req.params.id, req.body, (error) => {
     res.redirect(`/sheets/${req.params.id}`);
   });

@@ -16,11 +16,11 @@ class Edit extends React.Component {
               <div className="form-row">
                 <div className="form-group col">
                   <label htmlFor="title">Title</label>
-                  <input type="text" className="form-control" id="title" name="title" value={sheet.title} />
+                  <input type="text" className="form-control" id="title" name="title" defaultValue={sheet.title} />
                 </div>
                 <div className="form-group col">
                   <label htmlFor="composer">Composer</label>
-                  <input type="text" className="form-control" id="composer" name="composer" value={sheet.composer} />
+                  <input type="text" className="form-control" id="composer" name="composer" defaultValue={sheet.composer} />
                 </div>
               </div>
               <div className="form-row">
@@ -49,13 +49,13 @@ class Edit extends React.Component {
                 </div>
                 <div className="form-group col">
                   <label htmlFor="description">Description</label>
-                  <textarea className="form-control" id="description" rows="1" name="description" value={sheet.description} />
+                  <textarea className="form-control" id="description" rows="1" name="description" defaultValue={sheet.description} />
                 </div>
               </div>
               <div className="form-row">
                 <div className="form-group col-9">
                   <label htmlFor="youtube">Youtube Link</label>
-                  <input type="text" className="form-control" id="youtube" name="youtube" value={sheet.youtube} />
+                  <input type="text" className="form-control" id="youtube" name="youtube" defaultValue={sheet.youtube} />
                 </div>
                 <div className="form-group col">
                   <label>Genre(s)</label>
@@ -110,7 +110,7 @@ class Edit extends React.Component {
               </div>
               <div className="form-group col-8">
                 <label htmlFor="image">Cover Image Link</label>
-                <input type="text" className="form-control" id="image" name="image" value={sheet.image} />
+                <input type="text" className="form-control" id="image" name="image" defaultValue={sheet.image} />
               </div>
               <div className="form-group col">
                 <label htmlFor="submit" style={{opacity: 0}}>________________</label>
