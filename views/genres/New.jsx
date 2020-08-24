@@ -21,7 +21,7 @@ class New extends React.Component {
               </div>
               <div className="form-group">
                 <label htmlFor="description">Description</label>
-                <textarea className="form-control" id="description" rows="3" name="description1" placeholder="What this genre is all about" />
+                <textarea className="form-control" id="description" rows="3" name="description" placeholder="What this genre is all about" />
               </div>
               <h3>Influential Musicians/Composers <small className="text-muted">(Up to 4)</small></h3>
               <div className="form-row">

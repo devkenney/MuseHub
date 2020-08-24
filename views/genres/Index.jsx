@@ -17,10 +17,9 @@ class Index extends React.Component {
                     <img src={element.image} className="mr-3 align-self-center ml-1" alt={element.genreName} style={{ width: 200 }} />
                     <div className="media-body">
                       <h4 className="mt-0">{element.genreName}</h4>
-                      <h5 className="mt-0"><small className="text-muted">{element.composer}</small></h5>
                       <p style={{ overflow: "hidden", maxHeight: 50 }}>{element.description}</p>
                       <br />
-                      <a href={`/sheets/${element._id}`} className="btn btn-secondary">View More</a>
+                      <a href={`/genres/${element._id}`} className="btn btn-secondary">View More</a>
                     </div>
                   </li>
                 )
