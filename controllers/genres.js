@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 // New
 router.get('/new', (req, res) => {
   res.render('genres/New', {});
-})
+});
 
 // Destroy
 
@@ -50,11 +50,17 @@ router.post('/', (req, res) => {
   Genre.create(req.body, (error, createdGenre) => {
     console.log(createdGenre);
     res.redirect('/genres');
-  })
-})
+  });
+});
 
 // Edit
-
+router.get('/:id/edit', (req, res) => {
+  Genre.findById(req.params.id, (error, foundGenre) => {
+    res.render('genres/Edit.jsx', {
+      genre: foundGenre
+    });
+  });
+});
 
 // Show
 router.get('/:id', (req, res) => {
