@@ -29,7 +29,25 @@ router.get('/new', (req, res) => {
 
 
 // Update
-
+router.put('/:id', (req, res) => {
+  const innovatorList = []
+  innovatorList.push({artist: req.body.artName1, description: req.body.description1});
+  innovatorList.push({artist: req.body.artName2, description: req.body.description2});
+  innovatorList.push({artist: req.body.artName3, description: req.body.description3});
+  innovatorList.push({artist: req.body.artName4, description: req.body.description4});
+  req.body.innovatorList = innovatorList;
+  delete req.body.artName1;
+  delete req.body.artName2;
+  delete req.body.artName3;
+  delete req.body.artName4;
+  delete req.body.description1;
+  delete req.body.description2;
+  delete req.body.description3;
+  delete req.body.description4;
+  Genre.findByIdAndUpdate(req.params.id, req.body, (error) => {
+    res.redirect(`/genres/${req.params.id}`);
+  });
+});
 
 // Create
 router.post('/', (req, res) => {

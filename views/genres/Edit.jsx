@@ -9,7 +9,7 @@ class Edit extends React.Component {
         <div className="container">
           <div className="jumbotron">
             <h2>New Genre</h2>
-            <form action="/genres" method="POST">
+            <form action={`/genres/${genre._id}/?_method=PUT`} method="POST">
               <div className="form-row">
                 <div className="form-group col">
                   <label htmlFor="genreName">Genre Name</label>
@@ -67,7 +67,7 @@ class Edit extends React.Component {
                   </div>
                 </div>
               </div>
-              <input className="btn btn-primary" type="submit" name="" value="Create" />
+              <input className="btn btn-primary" type="submit" name="" value="Update" />
             </form>
           </div>
         </div>
