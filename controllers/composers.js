@@ -35,7 +35,11 @@ router.get('/new', (req, res) => {
 
 
 // Update
-
+router.put('/:id', (req, res) => {
+  Composer.findByIdAndUpdate(req.params.id, req.body, (error) => {
+    res.redirect(`/composers/${req.params.id}`);
+  });
+});
 
 // Create
 router.post('/', (req, res) => {
@@ -66,7 +70,13 @@ router.post('/', (req, res) => {
 });
 
 // Edit
-
+router.get('/:id/edit', (req, res) => {
+  Composer.findById(req.params.id, (error, foundComposer) => {
+    res.render('composers/Edit', {
+      composer: foundComposer
+    });
+  });
+});
 
 // Show
 router.get('/:id', (req, res) => {

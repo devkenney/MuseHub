@@ -104,9 +104,9 @@ class Edit extends React.Component {
               </div>
               </div>
             </form>
-            <form action={`/sheets/${sheet.id}/?_method=DELETE`} method="POST">
+            {/* <form action={`/sheets/${sheet.id}/?_method=DELETE`} method="POST">
               <input className="form-control btn btn-primary" id="delete" type="submit" name="" value="Delete" />
-            </form>
+            </form> */}
           </div>
         </div>
       </Default>
