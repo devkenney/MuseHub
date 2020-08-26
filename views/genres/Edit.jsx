@@ -67,7 +67,7 @@ class Edit extends React.Component {
                   </div>
                 </div>
               </div>
-              <input className="btn btn-primary" type="submit" name="" value="Update" />
+              <input className="btn btn-primary" type="submit" name="" disabled value="Update" />
             </form>
           </div>
         </div>

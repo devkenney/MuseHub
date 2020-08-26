@@ -28,7 +28,7 @@ router.get('/new', (req, res) => {
     res.render('composers/New', {
       genres: allGenres
     });
-  })
+  });
 });
 
 // Destroy
@@ -36,6 +36,38 @@ router.get('/new', (req, res) => {
 
 // Update
 router.put('/:id', (req, res) => {
+  let greatestWorks = []
+  greatestWorks.push({
+    title: req.body.workName1,
+    description: req.body.workDesc1
+  });
+  greatestWorks.push({
+    title: req.body.workName2,
+    description: req.body.workDesc2
+  });
+  greatestWorks.push({
+    title: req.body.workName3,
+    description: req.body.workDesc3
+  });
+  greatestWorks.push({
+    title: req.body.workName4,
+    description: req.body.workDesc4
+  });
+  delete req.body.workName1
+  delete req.body.workName2
+  delete req.body.workName3
+  delete req.body.workName4
+  delete req.body.workDesc1
+  delete req.body.workDesc2
+  delete req.body.workDesc3
+  delete req.body.workDesc4
+  req.body.greatestWorks = greatestWorks;
+  let primaryGenres = []
+  primaryGenres.push(req.body.genre1);
+  primaryGenres.push(req.body.genre2);
+  delete req.body.genre1;
+  delete req.body.genre2;
+  req.body.primaryGenres = primaryGenres;
   Composer.findByIdAndUpdate(req.params.id, req.body, (error) => {
     res.redirect(`/composers/${req.params.id}`);
   });
@@ -44,10 +76,22 @@ router.put('/:id', (req, res) => {
 // Create
 router.post('/', (req, res) => {
   let greatestWorks = []
-  greatestWorks.push({title: req.body.workName1, description: req.body.workDesc1});
-  greatestWorks.push({title: req.body.workName2, description: req.body.workDesc2});
-  greatestWorks.push({title: req.body.workName3, description: req.body.workDesc3});
-  greatestWorks.push({title: req.body.workName4, description: req.body.workDesc4});
+  greatestWorks.push({
+    title: req.body.workName1,
+    description: req.body.workDesc1
+  });
+  greatestWorks.push({
+    title: req.body.workName2,
+    description: req.body.workDesc2
+  });
+  greatestWorks.push({
+    title: req.body.workName3,
+    description: req.body.workDesc3
+  });
+  greatestWorks.push({
+    title: req.body.workName4,
+    description: req.body.workDesc4
+  });
   delete req.body.workName1
   delete req.body.workName2
   delete req.body.workName3
@@ -72,8 +116,11 @@ router.post('/', (req, res) => {
 // Edit
 router.get('/:id/edit', (req, res) => {
   Composer.findById(req.params.id, (error, foundComposer) => {
-    res.render('composers/Edit', {
-      composer: foundComposer
+    Genre.find({}, (error, allGenres) => {
+      res.render('composers/Edit', {
+        composer: foundComposer,
+        genres: allGenres
+      });
     });
   });
 });
@@ -83,8 +130,8 @@ router.get('/:id', (req, res) => {
   Composer.findById(req.params.id, (error, foundComposer) => {
     res.render('composers/Show', {
       composer: foundComposer
-    })
-  })
-})
+    });
+  });
+});
 
 module.exports = router;

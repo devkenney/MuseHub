@@ -61,7 +61,7 @@ class Edit extends React.Component {
                   <label>Genre(s)</label>
                   <div className="form-row">
                     <select className="form-control col" name="genre1">
-                    {
+                      {
                         genres.map((element) => {
                           return (
                             <option selected={sheet.genre2 === element.genreName ? true : false}>{element.genreName}</option>
@@ -83,30 +83,30 @@ class Edit extends React.Component {
                 </div>
               </div>
               <div className="form-row">
-              <div className="form-group col-2">
-                <label htmlFor="type">Type of Music</label>
-                <select className="form-control" name="type">
-                  <option selected={sheet.type === 'Solo Vocal' ? true : false}>Solo Vocal</option>
-                  <option selected={sheet.type === 'Solo Instrumental' ? true : false}>Solo Instrumental</option>
-                  <option selected={sheet.type === 'Instrumental' ? true : false}>Instrumental</option>
-                  <option selected={sheet.type === 'Instrumental and Vocal' ? true : false}>Instrumental and Vocal</option>
-                  <option selected={sheet.type === 'Orchestral' ? true : false}>Orchestral</option>
-                  <option selected={sheet.type === 'Choral' ? true : false}>Choral</option>
-                </select>
-              </div>
-              <div className="form-group col-8">
-                <label htmlFor="image">Cover Image Link</label>
-                <input type="text" className="form-control" id="image" name="image" defaultValue={sheet.image} />
-              </div>
-              <div className="form-group col">
-                <label htmlFor="submit" style={{opacity: 0}}>________________</label>
-                <input className="form-control btn btn-primary" id="submit" type="submit" name="" value="Make Changes" />
-              </div>
+                <div className="form-group col-2">
+                  <label htmlFor="type">Type of Music</label>
+                  <select className="form-control" name="type">
+                    <option selected={sheet.type === 'Solo Vocal' ? true : false}>Solo Vocal</option>
+                    <option selected={sheet.type === 'Solo Instrumental' ? true : false}>Solo Instrumental</option>
+                    <option selected={sheet.type === 'Instrumental' ? true : false}>Instrumental</option>
+                    <option selected={sheet.type === 'Instrumental and Vocal' ? true : false}>Instrumental and Vocal</option>
+                    <option selected={sheet.type === 'Orchestral' ? true : false}>Orchestral</option>
+                    <option selected={sheet.type === 'Choral' ? true : false}>Choral</option>
+                  </select>
+                </div>
+                <div className="form-group col-8">
+                  <label htmlFor="image">Cover Image Link</label>
+                  <input type="text" className="form-control" id="image" name="image" defaultValue={sheet.image} />
+                </div>
+                <div className="form-group col">
+                  <label htmlFor="submit" style={{ opacity: 0 }}>________________</label>
+                  <input className="form-control btn btn-primary" id="submit" type="submit" name="" disabled value="Make Changes" />
+                </div>
               </div>
             </form>
-            {/* <form action={`/sheets/${sheet.id}/?_method=DELETE`} method="POST">
-              <input className="form-control btn btn-primary" id="delete" type="submit" name="" value="Delete" />
-            </form> */}
+            <form action={`/sheets/${sheet.id}/?_method=DELETE`} method="POST">
+              <input className="form-control btn btn-primary" id="delete" type="submit" name="" value="Delete" disabled />
+            </form>
           </div>
         </div>
       </Default>

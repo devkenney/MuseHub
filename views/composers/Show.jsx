@@ -28,7 +28,7 @@ class Show extends React.Component {
               </div>
               <div className="media-body">
                 <div className="d-flex">
-                  <h2 className="display-4">{composer.name} <h4><a href={`/composer/${composer._id}/edit`} className="badge badge-pill badge-secondary">Edit</a></h4></h2>
+                  <h2 className="display-4">{composer.name} <h4><a href={`/composers/${composer._id}/edit`} className="badge badge-pill badge-secondary">Edit</a></h4></h2>
                 </div>
                 <h3 className="display-5"><small className="text-muted">Primarily a composer of  {composer.primaryType} pieces.</small></h3>
                 <p style={{ whiteSpace: "pre-line" }}>{composer.description}</p>
